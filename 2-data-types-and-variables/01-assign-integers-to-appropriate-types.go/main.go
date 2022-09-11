@@ -42,5 +42,19 @@ func main() {
 	var num13 uint32 = 65536
 	var num14 int64 = -1000000000000000000
 	var num15 int16 = -30000
-	fmt.Println("test")
+	fmt.Println(num1)
+	fmt.Println(num2)
+	fmt.Println(num3)
+	fmt.Println(num4)
+	fmt.Println(num5)
+	fmt.Println(num6)
+	fmt.Println(num7)
+	fmt.Println(num8)
+	fmt.Println(num9)
+	fmt.Println(num10)
+	fmt.Println(num11)
+	fmt.Println(num12)
+	fmt.Println(num13)
+	fmt.Println(num14)
+	fmt.Println(num15)
 }
