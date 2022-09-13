@@ -7,3 +7,7 @@ Example:
 (Given 1234)
 10
 */
+
+func main() {
+
+}

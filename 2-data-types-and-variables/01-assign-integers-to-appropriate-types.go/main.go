@@ -28,13 +28,13 @@ The numbers:
 
 func main() {
 	var num1 int8 = 60
-	var num2 int16 = -100
+	var num2 int8 = -100
 	var num3 int8 = 127
 	var num4 uint8 = 128
 	var num5 int32 = -144243
 	var num6 uint8 = 255
 	var num7 uint16 = 256
-	var num8 uint32 = 144243
+	var num8 int32 = 144243
 	var num9 int16 = 3641
 	var num10 int16 = -4512
 	var num11 uint16 = 65535
