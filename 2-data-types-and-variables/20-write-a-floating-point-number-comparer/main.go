@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"math"
+)
+
 /*
 Write a program which compares two float numbers with a given acceptable delta of 0.00005.
 
@@ -13,6 +18,12 @@ Examples:
 */
 
 func main() {
-	num1 := 3.100005
-	num2 := 3.100003
+	n1 := 3.100005
+	n2 := 3.100003
+	d := 0.000005
+	if math.Abs(n1-n2) <= d {
+		fmt.Printf("%v is equal to %v\n", n1, n2)
+	} else {
+		fmt.Printf("%v is not equal to %v\n", n1, n2)
+	}
 }
