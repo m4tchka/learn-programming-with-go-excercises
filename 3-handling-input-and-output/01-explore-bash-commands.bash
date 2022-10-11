@@ -1,4 +1,3 @@
-# 1
 # Using bash commands:
 # Make a new directory called “documents”
 # Create three files in it - name.txt, age.txt, address.txt
@@ -22,8 +21,8 @@ mkdir documents
 cd documents; touch name.txt age.txt address.txt 
 echo "name: m4tchka" > name.txt
 echo "age: 22" > age.txt
-echo "address: England" > address.txt
+echo "address: London, United Kingdom" > address.txt
 ls
 cat name.txt age.txt address.txt
 cd ..
-rm -rf documents
+rm -rf documents/
