@@ -14,12 +14,12 @@ mkdir songs; cd songs; touch favSongs.txt
 nano favSongs.txt 
 
 Ariana Grande - side to side
-Lady Gaga - shallow
+Rocky - going the distance
 Lady Gaga - shallow
 Lordi - Hard Rock Hallelujah
 Rocky - going the distance
-Rocky - going the distance
 Shocking Blue - Venus
+Lady Gaga - shallow
 Shocking Blue - Venus
 The Vogues - youre the one
 
