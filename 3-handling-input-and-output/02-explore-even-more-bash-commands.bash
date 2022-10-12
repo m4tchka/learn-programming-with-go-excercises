@@ -23,7 +23,6 @@ Lady Gaga - shallow
 Shocking Blue - Venus
 The Vogues - youre the one
 
-sort favSongs.txt
 sort favSongs.txt | uniq
 
 grep Lordi favSongs.txt
