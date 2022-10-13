@@ -44,6 +44,7 @@ func main() {
 	item3 := getInput("Enter the third item's name: ")
 	item3Price := parseTerminalFloat(getInput("Enter the third item's price: "))
 
+	fmt.Println("Here's your restaurant's menu:")
 	fmt.Printf("| %-12s | $%-6.2f |\n", item1, item1Price)
 	fmt.Printf("| %-12s | $%-6.2f |\n", item2, item2Price)
 	fmt.Printf("| %-12s | $%-6.2f |\n", item3, item3Price)
