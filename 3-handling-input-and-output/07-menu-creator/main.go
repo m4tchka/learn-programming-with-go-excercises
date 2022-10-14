@@ -18,25 +18,6 @@ Here’s your restaurant’s menu:
 | {item3}		| {price3}$	|
 */
 func main() {
-	/* 	r := bufio.NewReader(os.Stdin)
-
-	   	fmt.Println("Enter the first item's name:")
-	   	item1, err := r.ReadString('\n')
-	   	if err != nil {
-	   		panic(err)
-	   	}
-	   	item1 = strings.TrimSpace(item1)
-
-	   	fmt.Println("Enter the first item's price:")
-	   	priceStr, err := r.ReadString('\n')
-	   	if err != nil {
-	   		panic(err)
-	   	}
-	   	item1Price, err := strconv.ParseFloat(strings.TrimSpace(priceStr), 64)
-	   	if err != nil {
-	   		panic(err)
-	   	} */
-
 	item1 := getInput("Enter the first item's name: ")
 	item1Price := parseTerminalFloat(getInput("Enter the first item's price: "))
 	item2 := getInput("Enter the second item's name: ")

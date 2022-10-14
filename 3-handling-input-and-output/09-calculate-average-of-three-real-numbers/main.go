@@ -16,8 +16,8 @@ func main() {
 	num1 := getInput()
 	num2 := getInput()
 	num3 := getInput()
-	sum := num1 + num2 + num3
-	fmt.Printf("Result: %.3f", sum)
+	avg := (num1 + num2 + num3) / 3
+	fmt.Printf("Result: %.3f", avg)
 }
 
 func getInput() float64 {
