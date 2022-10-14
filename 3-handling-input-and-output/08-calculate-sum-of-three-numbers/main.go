@@ -21,6 +21,9 @@ func main() {
 	num3 := part1Input()
 	part1Sum := num1 + num2 + num3
 	fmt.Printf("Result: %d\n", part1Sum)
+	part2Sum := part2Input()
+	fmt.Printf("Result: %d\n", part2Sum)
+
 }
 func part1Input() int {
 	r := bufio.NewReader(os.Stdin)
@@ -33,4 +36,21 @@ func part1Input() int {
 		panic(err)
 	}
 	return num
+}
+func part2Input() int {
+	r := bufio.NewReader(os.Stdin)
+	inputStr, err := r.ReadString('\n')
+	if err != nil {
+		panic(err)
+	}
+	numbers := strings.Split(strings.TrimSpace(inputStr), " ")
+	var sum int
+	for _, numStr := range numbers {
+		num, err := strconv.Atoi(numStr)
+		if err != nil {
+			panic(err)
+		}
+		sum += num
+	}
+	return sum
 }
