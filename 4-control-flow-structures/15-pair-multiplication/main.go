@@ -30,8 +30,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	for i := 1; i <= N; i++ {
-		for j := 1; j <= N; j++ {
+	for i := 1; i <= N/2; i++ {
+		for j := 1; j <= N/2; j++ {
 			if i*j == X {
 				fmt.Printf("\n%d x %d = %d", i, j, X)
 			}
