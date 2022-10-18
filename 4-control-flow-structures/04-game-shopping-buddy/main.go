@@ -24,7 +24,6 @@ If you bought less than three games, print the games you did buy in this order.
 If you couldn’t buy anything, print I couldn’t buy anything!
 */
 
-// mkdir 04-game-shopping-buddy ; cd $_; go mod init 04-game-shopping-buddy ; echo "package main" > main.go ; code main.go
 func main() {
 	budget := 90
 	var games []string

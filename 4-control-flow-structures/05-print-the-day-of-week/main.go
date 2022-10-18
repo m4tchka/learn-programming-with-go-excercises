@@ -28,7 +28,6 @@ func main() {
 	switch num {
 	case 1:
 		fmt.Println("Monday")
-		break
 	case 2:
 		fmt.Println("Tuesday")
 	case 3:
