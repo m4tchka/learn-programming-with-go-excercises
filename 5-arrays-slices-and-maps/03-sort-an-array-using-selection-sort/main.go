@@ -42,17 +42,22 @@ func main() {
 }
 func selectionSort(unsortedNumSli []int) []int {
 	var sortedNumSli []int
-	for _, num := range unsortedNumSli {
-		fmt.Println("Num: ", num)
-		lowest := unsortedNumSli[0]
-		// lowestIndex := 0
-		if num < lowest {
-			lowest = num
-			// lowestIndex = i
+	// Loop through unsortedNumSli
+	// Record the min and its index
+	// Append min to new array
+	// Remove min from old array
+	min := unsortedNumSli[0]
+	minI := 0
+	for i := range unsortedNumSli {
+		if unsortedNumSli[i] < min {
+			min = unsortedNumSli[i]
+			minI = i
 		}
-		fmt.Println("Lowest: ", lowest)
-		sortedNumSli = append(sortedNumSli, lowest)
 	}
+	fmt.Println("Lowest: ", min, " at index ", minI)
+	unsortedNumSli[0], unsortedNumSli[minI] = unsortedNumSli[minI], unsortedNumSli[0]
+	// sortedNumSli = append(sortedNumSli, min)
+	// unsortedNumSli = remove(unsortedNumSli, lowestIndex)
 	return sortedNumSli
 }
 
