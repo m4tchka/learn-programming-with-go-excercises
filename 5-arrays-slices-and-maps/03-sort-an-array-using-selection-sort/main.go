@@ -30,10 +30,7 @@ func main() {
 		}
 		unsortedNumSli = append(unsortedNumSli, num)
 	}
-
 	sortedNumSli := selectionSort(unsortedNumSli)
-	fmt.Printf("Sorted: %v", sortedNumSli)
-
 	var sortedNumStrSli []string
 	for _, num := range sortedNumSli {
 		sortedNumStrSli = append(sortedNumStrSli, strconv.Itoa(num))
@@ -41,27 +38,19 @@ func main() {
 	fmt.Println(strings.Join(sortedNumStrSli, " "))
 }
 func selectionSort(unsortedNumSli []int) []int {
-	var sortedNumSli []int
 	// Loop through unsortedNumSli
 	// Record the min and its index
 	// Append min to new array
 	// Remove min from old array
-	min := unsortedNumSli[0]
-	minI := 0
-	for i := range unsortedNumSli {
-		if unsortedNumSli[i] < min {
-			min = unsortedNumSli[i]
-			minI = i
+	for startIndex := 0; startIndex < len(unsortedNumSli); startIndex++ {
+		minIndex := startIndex
+		for i := startIndex; i < len(unsortedNumSli); i++ {
+			if unsortedNumSli[i] < unsortedNumSli[minIndex] {
+				minIndex = i
+			}
 		}
+		fmt.Println("On loop", startIndex, "the lowest number is:", unsortedNumSli[minIndex], " at index ", minIndex)
+		unsortedNumSli[startIndex], unsortedNumSli[minIndex] = unsortedNumSli[minIndex], unsortedNumSli[startIndex]
 	}
-	fmt.Println("Lowest: ", min, " at index ", minI)
-	unsortedNumSli[0], unsortedNumSli[minI] = unsortedNumSli[minI], unsortedNumSli[0]
-	// sortedNumSli = append(sortedNumSli, min)
-	// unsortedNumSli = remove(unsortedNumSli, lowestIndex)
-	return sortedNumSli
+	return unsortedNumSli
 }
-
-// func remove(intSli []int, index int) []int {
-// 	intSli = append(intSli[:index], intSli[index+1:]...)
-// 	return intSli
-// }
