@@ -9,6 +9,7 @@ import (
 
 /*
 Write a program which takes in two lines of numbers and outputs the union of the two lists. There should be no duplicates.
+Note: The order of the numbers in the final output doesn’t matter
 */
 
 func main() {
@@ -33,9 +34,6 @@ func getNumSlice() []string {
 		panic(err)
 	}
 	numStrSli := strings.Split(strings.TrimSpace(line), " ")
-	if err != nil {
-		panic(err)
-	}
 	return numStrSli
 }
 func checkContains(strSli []string, e string) bool {

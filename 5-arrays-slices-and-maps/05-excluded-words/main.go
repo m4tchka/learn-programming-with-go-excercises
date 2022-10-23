@@ -29,9 +29,6 @@ func getStrSlice() []string {
 		panic(err)
 	}
 	strSli := strings.Split(strings.TrimSpace(line), " ")
-	if err != nil {
-		panic(err)
-	}
 	return strSli
 }
 func checkContains(exc []string, wrd string) bool {
