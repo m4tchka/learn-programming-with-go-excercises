@@ -17,19 +17,17 @@ If no numbers sum up to N, print “no solution exists”.
 func main() {
 	numSli := getIntSli()
 	target := getIntInput()
-	var result solutions
+	var result [][]int
 	for i, n := range numSli {
 		if n < target {
 			result = checkForward(target, numSli[i:], result)
 		} else if n == target {
-			var solution subset
-			solution.combo = append(solution.combo, n)
-			result.validSubsets = append(result.validSubsets, solution)
+			result = append(result, []int{n})
 		} else {
 			continue
 		}
 	}
-	fmt.Println("result: ", result)
+	printResult(result, target)
 }
 func getIntSli() []int {
 	r := bufio.NewReader(os.Stdin)
@@ -60,40 +58,34 @@ func getIntInput() int {
 	}
 	return num
 }
-func checkForward(target int, sli []int, res solutions) solutions {
+func checkForward(target int, sli []int, res [][]int) [][]int {
 	var sum int
-	var possibleSubset subset
 	var possibleSolution []int
 	for _, num := range sli {
-		fmt.Println("Running total: ", sum)
+		possibleSolution = append(possibleSolution, num)
+		sum += num
 		if sum < target {
-			fmt.Println("Number to be added: ", num)
-			sum += num
-			possibleSolution = append(possibleSolution, num)
 		} else if sum == target {
-			possibleSubset.combo = append(possibleSubset.combo, possibleSolution...)
-			res.validSubsets = append(res.validSubsets, possibleSubset)
+			res = append(res, possibleSolution)
 			break
 		} else {
-			fmt.Println("Sum", sum, "has overshot the target", target)
 			break
 		}
 	}
 	return res
 }
-
-type solutions struct {
-	validSubsets []subset
+func printResult(res [][]int, t int) {
+	fmt.Println()
+	if len(res) == 0 {
+		fmt.Println("no solution exists")
+	} else {
+		for _, sli := range res {
+			var numStrSli []string
+			for _, num := range sli {
+				numStr := strconv.Itoa(num)
+				numStrSli = append(numStrSli, numStr)
+			}
+			fmt.Printf("%s = %d\n", strings.Join(numStrSli, "+"), t)
+		}
+	}
 }
-type subset struct {
-	combo []int
-}
-
-/*
-[
-[1+2+3],
-[2+3+1],
-[4+1],
-[5],
-]
-*/
