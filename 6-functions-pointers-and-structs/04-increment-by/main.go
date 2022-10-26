@@ -14,14 +14,13 @@ Create a function incrementBy which takes in a slice and a number N and incremen
 
 func main() {
 	sli, n := getIntSliInput(), getNumInput()
-	newSli := incrementBy(sli, n)
-	fmt.Println("result: ", newSli)
+	incrementBy(sli, n)
+	fmt.Println("result: ", sli)
 }
-func incrementBy(sli []int, N int) []int {
+func incrementBy(sli []int, N int) {
 	for ind := range sli {
 		sli[ind] += N
 	}
-	return sli
 }
 func getIntSliInput() []int {
 	r := bufio.NewReader(os.Stdin)
